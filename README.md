@@ -6,6 +6,7 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 ---
 
 ## Flix Part 1
+Hours spent: 7
 
 ### User Stories
 
@@ -26,7 +27,7 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 <img src="FlixsterWalkthrough.gif" width=250><br>
 
 ### Notes
-Describe any challenges encountered while building the app.
+Can not view the whole overview at first if the overview is too long. I change its height into wrap_content and make the image locate at the center of the parent to improve the UI a little bit.
 
 ### Open-source libraries used
 
