@@ -24,8 +24,11 @@ Hours spent: 8
 
 ### App Walkthough GIF
 
-<img src="FlixsterWalkthrough.gif" width=250>
-<img src="FlixsterWalkthrough2.gif" width=250><br>
+<p float="left">
+  <img src="/FlixsterWalkthrough.gif" width="280" />
+  <img src="/FlixsterWalkthrough2.gif" width="530" /> 
+</p>
+
 
 
 ### Notes
