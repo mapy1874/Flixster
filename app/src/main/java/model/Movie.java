@@ -12,9 +12,11 @@ public class Movie {
     public String poster_path;
     public String title;
     public String overview;
+    public String backdrop_path;
 
     public Movie(JSONObject jsonObject) throws JSONException {
         poster_path = jsonObject.getString("poster_path");
+        backdrop_path = jsonObject.getString("backdrop_path");
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
 
@@ -33,6 +35,11 @@ public class Movie {
         // %s is the logo for the path comes later
         // change the relative directory into to the hard directory
         return String.format("https://image.tmdb.org/t/p/w342/%s", poster_path);
+    }
+
+    public String getBackdrop_path() {
+        return String.format("https://image.tmdb.org/t/p/w300/%s", backdrop_path);
+
     }
 
     public String getTitle() {

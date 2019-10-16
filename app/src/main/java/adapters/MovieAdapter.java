@@ -1,6 +1,7 @@
 package adapters;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +47,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         public void bind(Movie movie) {
             tvTitle.setText(movie.title);
             tvOverview.setText(movie.overview);
-            Glide.with(context).load(movie.getPoster_path()).into(ivPoster);
+            String imageUrl;
+            if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                imageUrl = movie.getBackdrop_path();
+            }
+            else {
+                imageUrl = movie.getPoster_path();
+            }
+            Glide.with(context).load(imageUrl).into(ivPoster);
         }
     }
 
