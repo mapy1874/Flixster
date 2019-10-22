@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         rvMovies.setLayoutManager(new LinearLayoutManager(this));
 
         AsyncHttpClient client = new AsyncHttpClient();
-       client.get(NOW_PLAYING_URL, new JsonHttpResponseHandler() {
+        client.get(NOW_PLAYING_URL, new JsonHttpResponseHandler() {
            @Override
            public void onSuccess(int statusCode, Headers headers, JSON json) {
                Log.d(TAG, "onSuccess");

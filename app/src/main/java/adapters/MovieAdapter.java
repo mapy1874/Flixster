@@ -1,18 +1,23 @@
 package adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.flixster.DetailActivity;
 import com.example.flixster.R;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -21,7 +26,7 @@ import model.Movie;
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
     Context context;
     List<Movie> movies;
-
+    public final static String MOVIE_KEY = "movie";
     public MovieAdapter(Context context, List<Movie> movies) {
         this.context = context;
         this.movies = movies;
@@ -35,6 +40,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         TextView tvTitle;
         TextView tvOverview;
         ImageView ivPoster;
+        RelativeLayout container;
         public ViewHolder(@NonNull View itemView) {
             // Stores the itemView in a public final member variable that can be used
             // to access the context from any ViewHolder instance.
@@ -42,11 +48,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             this.tvOverview = itemView.findViewById(R.id.tvOverview);
             this.tvTitle = itemView.findViewById(R.id.tvTitle);
             this.ivPoster = itemView.findViewById(R.id.ivPoster);
+            this.container = itemView.findViewById(R.id.container);
         }
 
-        public void bind(Movie movie) {
-            tvTitle.setText(movie.title);
-            tvOverview.setText(movie.overview);
+        public void bind(final Movie movie) {
+            tvTitle.setText(movie.getTitle());
+            tvOverview.setText(movie.getOverview());
             String imageUrl;
             if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 imageUrl = movie.getBackdrop_path();
@@ -55,7 +62,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 imageUrl = movie.getPoster_path();
             }
             Glide.with(context).load(imageUrl).into(ivPoster);
+            container.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     // first parameter is the context, second is the class of the activity to launch
+                     Intent intent = new Intent(context, DetailActivity.class);
+                     // put "extras" into the bundle for access in the second activity
+                     intent.putExtra(MOVIE_KEY, Parcels.wrap(movie));
+                     context.startActivity(intent);
+                 }
+             });
         }
+
     }
 
     // inflating a layout in XML file and return to holder
