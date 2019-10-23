@@ -3,7 +3,7 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 ## Flix Part 2
 
-Hours spent: 8
+Hours spent: 10
 
 ### User Stories
 
@@ -49,7 +49,7 @@ Hours spent: 8
 
 - [ ] (2pts) Display a nice default [placeholder graphic](https://guides.codepath.org/android/Displaying-Images-with-the-Glide-Library#advanced-usage) for each image during loading
 - [x] (2pts) Improved the user interface by experimenting with styling and coloring.
-- [ ] (2pts) For popular movies (i.e. a movie voted for more than 5 stars), the full backdrop image is displayed. Otherwise, a poster image, the movie title, and overview is listed. Use Heterogenous RecyclerViews and use different ViewHolder layout files for popular movies and less popular ones.
+- [x] (2pts) For popular movies (i.e. a movie voted for more than 7.5 stars), the full backdrop image is displayed. Otherwise, a poster image, the movie title, and overview is listed. Use Heterogenous RecyclerViews and use different ViewHolder layout files for popular movies and less popular ones.
 
 ### App Walkthough GIF
 
