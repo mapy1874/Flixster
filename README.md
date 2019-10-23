@@ -23,7 +23,7 @@ Hours spent: 8
 
 ### App Walkthough GIF
 
-<img src="https://github.com/mapy1874/Flixster/blob/master/FlixsterWalkthrough3.gif" width=250><br>
+<img src="https://github.com/mapy1874/Flixster/blob/master/FlixsterWalkthrough3.gif" width=500><br>
 
 ### Notes
 
