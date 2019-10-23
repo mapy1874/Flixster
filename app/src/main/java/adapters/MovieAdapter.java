@@ -78,7 +78,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                     .load(imageUrl)
                     .apply(requestOptions)
                     .into(ivPoster);
-            
+
             container.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View v) {
