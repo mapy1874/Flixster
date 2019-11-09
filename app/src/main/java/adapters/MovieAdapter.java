@@ -72,7 +72,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 imageUrl = movie.getPoster_path();
             }
             RequestOptions requestOptions = new RequestOptions();
-            requestOptions = requestOptions.transforms(new CenterCrop(), new RoundedCorners(20));
+            requestOptions = requestOptions
+                    .transforms(new CenterCrop(), new RoundedCorners(20))
+                    .placeholder(R.drawable.ic_launcher_background);
 
             Glide.with(context)
                     .load(imageUrl)
